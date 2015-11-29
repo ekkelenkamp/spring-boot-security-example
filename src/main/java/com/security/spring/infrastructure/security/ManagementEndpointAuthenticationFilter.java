@@ -36,7 +36,7 @@ public class ManagementEndpointAuthenticationFilter extends GenericFilterBean {
     }
 
     private void prepareManagementEndpointsSet() {
-        managementEndpoints = new HashSet<>();
+        managementEndpoints = new HashSet<String>();
         managementEndpoints.add(ApiController.AUTOCONFIG_ENDPOINT);
         managementEndpoints.add(ApiController.BEANS_ENDPOINT);
         managementEndpoints.add(ApiController.CONFIGPROPS_ENDPOINT);
@@ -46,7 +46,6 @@ public class ManagementEndpointAuthenticationFilter extends GenericFilterBean {
         managementEndpoints.add(ApiController.SHUTDOWN_ENDPOINT);
     }
 
-    @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest httpRequest = asHttp(request);
         HttpServletResponse httpResponse = asHttp(response);

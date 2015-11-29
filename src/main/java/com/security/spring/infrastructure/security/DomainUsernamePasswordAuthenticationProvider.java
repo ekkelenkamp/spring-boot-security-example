@@ -17,7 +17,6 @@ public class DomainUsernamePasswordAuthenticationProvider implements Authenticat
         this.externalServiceAuthenticator = externalServiceAuthenticator;
     }
 
-    @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         Optional<String> username = (Optional) authentication.getPrincipal();
         Optional<String> password = (Optional) authentication.getCredentials();
@@ -34,7 +33,6 @@ public class DomainUsernamePasswordAuthenticationProvider implements Authenticat
         return resultOfAuthentication;
     }
 
-    @Override
     public boolean supports(Class<?> authentication) {
         return authentication.equals(UsernamePasswordAuthenticationToken.class);
     }

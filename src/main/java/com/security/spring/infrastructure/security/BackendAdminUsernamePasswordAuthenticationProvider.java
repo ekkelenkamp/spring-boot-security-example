@@ -19,7 +19,6 @@ public class BackendAdminUsernamePasswordAuthenticationProvider implements Authe
     @Value("${backend.admin.password}")
     private String backendAdminPassword;
 
-    @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         Optional<String> username = (Optional) authentication.getPrincipal();
         Optional<String> password = (Optional) authentication.getCredentials();
@@ -44,7 +43,6 @@ public class BackendAdminUsernamePasswordAuthenticationProvider implements Authe
         return backendAdminUsername.equals(username);
     }
 
-    @Override
     public boolean supports(Class<?> authentication) {
         return authentication.equals(BackendAdminUsernamePasswordAuthenticationToken.class);
     }

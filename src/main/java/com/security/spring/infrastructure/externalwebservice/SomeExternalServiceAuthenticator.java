@@ -8,7 +8,6 @@ import com.security.spring.infrastructure.security.ExternalServiceAuthenticator;
 
 public class SomeExternalServiceAuthenticator implements ExternalServiceAuthenticator {
 
-    @Override
     public AuthenticatedExternalWebService authenticate(String username, String password) {
         ExternalWebServiceStub externalWebService = new ExternalWebServiceStub();
 
